@@ -43,6 +43,8 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
+
+//TOP NAVBAR
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
@@ -54,7 +56,11 @@ const navigationMenu = document.querySelectorAll("a");
   (navigationMenu[4].textContent = "About"),
   (navigationMenu[5].textContent = "Contact");
 
-//cta
+navigationMenu.forEach(navigationMenu => {
+  navigationMenu.style.color = "green";
+});
+
+//TOP SECTION
 const ctaTitle = document.querySelector(" div h1");
 ctaTitle.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
 
@@ -63,3 +69,46 @@ circleImg.setAttribute("src", siteContent["cta"]["img-src"]);
 
 const ctaButton = document.querySelector("button");
 ctaButton.textContent = siteContent["cta"]["button"];
+
+// MAIN SECTION
+const mainContect = document.querySelectorAll("h4");
+mainContect[0].textContent = "Features";
+mainContect[1].textContent = "About";
+mainContect[2].textContent = "Services";
+mainContect[3].textContent = "Product";
+mainContect[4].textContent = "Vision";
+
+const mainImg = document.getElementById("middle-img");
+mainImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+const paragraphSec = document.querySelectorAll("div p");
+paragraphSec[0].textContent = siteContent["main-content"]["features-content"];
+paragraphSec[1].textContent = siteContent["main-content"]["about-content"];
+paragraphSec[2].textContent = siteContent["main-content"]["services-content"];
+paragraphSec[3].textContent = siteContent["main-content"]["product-content"];
+paragraphSec[4].textContent = siteContent["main-content"]["vision-content"];
+
+// CONTACT SECTION
+mainContect[5].textContent = "Contact";
+paragraphSec[5].innerHTML = siteContent["contact"]["address"]
+  .split("Street ")
+  .join("Street <br>");
+
+paragraphSec[6].textContent = siteContent["contact"]["phone"];
+paragraphSec[7].textContent = siteContent["contact"]["email"];
+
+paragraphSec[8].textContent = siteContent["footer"]["copyright"];
+
+let firstNav = document.createElement("a");
+firstNav.href = "#";
+firstNav.textContent = "Beginning";
+firstNav.style.color = "green";
+
+let lastNav = document.createElement("a");
+lastNav.href = "#";
+lastNav.textContent = "End";
+lastNav.style.color = "green";
+
+const newNav = document.querySelector("nav");
+newNav.prepend(firstNav);
+newNav.append(lastNav);
