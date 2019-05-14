@@ -46,14 +46,20 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
-const navBar = document.querySelectorAll("nav a");
-(navBar[0].textContent = "Services"),
-  (navBar[1].textContent = "Product"),
-  (navBar[2].textContent = "Vision"),
-  (navBar[3].textContent = "Features"),
-  (navBar[4].textContent = "About"),
-  (navBar[5].textContent = "Contact");
+const navigationMenu = document.querySelectorAll("a");
+(navigationMenu[0].textContent = "Services"),
+  (navigationMenu[1].textContent = "Product"),
+  (navigationMenu[2].textContent = "Vision"),
+  (navigationMenu[3].textContent = "Features"),
+  (navigationMenu[4].textContent = "About"),
+  (navigationMenu[5].textContent = "Contact");
 
-const mainSection = document.querySelector("main-content");
-mainSection[0].textContent = "Hello";
-mainSection[1].textContent = "goodbye";
+//cta
+const ctaTitle = document.querySelector(" div h1");
+ctaTitle.innerHTML = siteContent["cta"]["h1"].split(" ").join("<br>");
+
+const circleImg = document.getElementById("cta-img");
+circleImg.setAttribute("src", siteContent["cta"]["img-src"]);
+
+const ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
